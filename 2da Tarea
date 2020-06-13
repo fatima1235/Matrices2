@@ -1,0 +1,83 @@
+using System;
+					
+public class Program
+{
+	public static string [,] agenda = new string[10,4];
+    public static void Main(string[] args) 
+    {
+        int f=0;
+        while(true){
+        
+         Console.WriteLine("______________________________________________");
+         
+         Console.WriteLine("Ingrese el numero de su opcion a elegir.");
+         Console.WriteLine("1. Crear contacto");
+         Console.WriteLine("2. Mostrar contactos");
+         Console.WriteLine("3. Buscar contacto");
+         Console.WriteLine("4. Salir");
+         Console.WriteLine("______________________________________________");
+         int num=int.Parse(Console.ReadLine());
+         
+        
+         if(num==1)
+         {
+            
+                Console.WriteLine("______________________");
+                
+                Console.WriteLine("Ingrese nombre: "); 
+                agenda[f, 0] = Console.ReadLine(); 
+
+                Console.WriteLine("Ingrese apellido: "); 
+                agenda[f, 1] = Console.ReadLine(); 
+
+                Console.WriteLine("Ingrese dirección: "); 
+                agenda[f, 2] = Console.ReadLine(); 
+
+                Console.WriteLine("Ingrese telefono: "); 
+                agenda[f, 3] = Console.ReadLine(); 
+                
+                Console.WriteLine("_______________________");
+                f=f+1;
+            }
+ 
+        if(num==2)
+        {
+        for (int g=0;g<10;g++) { 
+             
+                Console.WriteLine("_____________________________");
+                
+                Console.WriteLine(agenda[g,0]);
+			 	 Console.WriteLine(agenda[g, 1]);
+                Console.WriteLine(agenda[g, 2]);
+                Console.WriteLine(agenda[g, 3]);
+                
+                Console.WriteLine("_____________________________");
+         } 
+        
+        }
+        if(num==3){
+            for (int h=0;h<10; h++) {
+           string usuario="No encontrado";
+            string buscar="";
+                Console.WriteLine("Ingrese el nombre del contacto a buscar: "); 
+                buscar = Console.ReadLine();
+                 if (buscar==agenda[h,0]) 
+                { 
+                    usuario = agenda[h,0] + "--" + agenda[h,1] + "--" + agenda[h,2] + "--" + agenda[h,3]; 
+                }
+                Console.WriteLine(usuario); 
+                Console.ReadKey(); 
+                 break;
+            
+         } 
+       
+        }
+                
+        
+        if(num==4)
+         {
+        Console.Clear();
+        }
+    }
+    }
+}
